@@ -1,8 +1,10 @@
 package io.github.cursodsousa.iocompras.pedidos.controller;
 
+import io.github.cursodsousa.iocompras.pedidos.controller.dto.AdicaoNovoPagamentoDTO;
 import io.github.cursodsousa.iocompras.pedidos.controller.dto.NovoPedidoDTO;
 import io.github.cursodsousa.iocompras.pedidos.controller.mappers.PedidoMapper;
 import io.github.cursodsousa.iocompras.pedidos.model.ErroResposta;
+import io.github.cursodsousa.iocompras.pedidos.model.exception.ItemNaoEncontradoException;
 import io.github.cursodsousa.iocompras.pedidos.model.exception.ValidationException;
 import io.github.cursodsousa.iocompras.pedidos.service.PedidoService;
 import lombok.RequiredArgsConstructor;
@@ -28,6 +30,18 @@ public class PedidoController {
             return ResponseEntity.ok(novoPedido.getCodigo());
         } catch (ValidationException e) {
             var erro = new ErroResposta("Erro de validação", e.getField(), e.getMessage());
+            return ResponseEntity.badRequest().body(erro);
+        }
+    }
+
+    @PostMapping("pagamentos")
+    public ResponseEntity<Object> adicionarNovoPagamento(@RequestBody AdicaoNovoPagamentoDTO dto) {
+        try {
+            service.adicionarNovoPagamento(dto.codigoPedido(), dto.dados(), dto.tipoPagamento());
+            return ResponseEntity.noContent().build();
+        } catch (ItemNaoEncontradoException e) {
+            var erro = new ErroResposta(
+                    "Item não encontrado", "codidoPedido", e.getMessage());
             return ResponseEntity.badRequest().body(erro);
         }
     }
