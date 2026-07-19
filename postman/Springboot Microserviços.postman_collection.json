@@ -1,0 +1,275 @@
+{
+	"info": {
+		"_postman_id": "71b6ccbe-f23a-4d33-962b-e93c400d55df",
+		"name": "Springboot Microserviços",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "1494256"
+	},
+	"item": [
+		{
+			"name": "ICompras",
+			"item": [
+				{
+					"name": "produto",
+					"item": [
+						{
+							"name": "Salvar",
+							"request": {
+								"method": "GET",
+								"header": []
+							},
+							"response": []
+						},
+						{
+							"name": "obter produto",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "localhost:8082/produtos/1",
+									"host": [
+										"localhost"
+									],
+									"port": "8082",
+									"path": [
+										"produtos",
+										"1"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "cliente",
+					"item": [
+						{
+							"name": "Salvar",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"nome\": \"Zezinho da silva\",\n    \"cpf\": \"12345678910\",\n    \"logradouro\": \"Rua 1\",\n    \"numero\": \"10\",\n    \"bairro\": \"Flores Azuis\",\n    \"email\": \"zezinho@email.com\",\n    \"telefone\": \"12\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:8082/clientes",
+									"host": [
+										"localhost"
+									],
+									"port": "8082",
+									"path": [
+										"clientes"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "obter",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "localhost:8082/clientes/1",
+									"host": [
+										"localhost"
+									],
+									"port": "8082",
+									"path": [
+										"clientes",
+										"1"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "pedido",
+					"item": [
+						{
+							"name": "criar pedido",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"codigoCliente\": 12,\n    \"dadosPagamento\": {\n        \"tipoPagamento\": \"CREDIT\",\n        \"dados\": \"VISA\"\n    },\n    \"itens\": [\n        {\n            \"codigoProduto\": 10,\n            \"quantidade\": 2,\n            \"valorUnitario\": 50\n        },\n        {\n            \"codigoProduto\": 2,\n            \"quantidade\": 1,\n            \"valorUnitario\": 550\n        }\n    ]\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:8080/pedidos",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"pedidos"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "novo pagamento",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"codigoPedido\": 13,\n    \"tipoPagamento\": \"DEBIT\",\n    \"dados\": \"156169489\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:8080/pedidos/pagamentos",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"pedidos",
+										"pagamentos"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "callback-pagamentos",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "apiKey",
+										"value": "",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"codigo\": 3,\n    \"chavePagamento\": \"f1c9cc23-48e6-4380-94b4-0f76b53f756f\",\n    \"status\": true,\n    \"observacoes\": \"\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:8080/pedidos/callback-pagamentos",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"pedidos",
+										"callback-pagamentos"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "detalhes",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"codigoPedido\": 13,\n    \"tipoPagamento\": \"DEBIT\",\n    \"dados\": \"156169489\"\n}"
+								},
+								"url": {
+									"raw": "localhost:8080/pedidos/3",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"pedidos",
+										"3"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Bucket",
+					"item": [
+						{
+							"name": "upload",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "file",
+											"type": "file",
+											"src": "/home/rafael-note/Área de Trabalho/20122008078.jpg"
+										}
+									]
+								},
+								"url": {
+									"raw": "localhost:8083/bucket",
+									"host": [
+										"localhost"
+									],
+									"port": "8083",
+									"path": [
+										"bucket"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "get-url",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "localhost:8083/bucket?fileName=20122008078.jpg",
+									"host": [
+										"localhost"
+									],
+									"port": "8083",
+									"path": [
+										"bucket"
+									],
+									"query": [
+										{
+											"key": "fileName",
+											"value": "20122008078.jpg"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		}
+	]
+}
