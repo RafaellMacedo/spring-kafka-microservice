@@ -1,0 +1,7 @@
+/home/rafael-note/curso/spring com microserviços/faturamento/src/main/java/io/github/cursodsousa/icompras/faturamento/config/KafkaConfig.java
+/home/rafael-note/curso/spring com microserviços/faturamento/src/main/java/io/github/cursodsousa/icompras/faturamento/mapper/PedidoMapper.java
+/home/rafael-note/curso/spring com microserviços/faturamento/src/main/java/io/github/cursodsousa/icompras/faturamento/model/Cliente.java
+/home/rafael-note/curso/spring com microserviços/faturamento/src/main/java/io/github/cursodsousa/icompras/faturamento/model/ItemPedido.java
+/home/rafael-note/curso/spring com microserviços/faturamento/src/main/java/io/github/cursodsousa/icompras/faturamento/model/Pedido.java
+/home/rafael-note/curso/spring com microserviços/faturamento/src/main/java/io/github/cursodsousa/icompras/faturamento/subscriber/representation/DetalheItemPedidoRepresentation.java
+/home/rafael-note/curso/spring com microserviços/faturamento/src/main/java/io/github/cursodsousa/icompras/faturamento/subscriber/representation/DetalhePedidoRepresentation.java
