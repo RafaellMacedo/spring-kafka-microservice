@@ -6,13 +6,12 @@ import io.github.cursodsousa.iocompras.pedidos.controller.mappers.PedidoMapper;
 import io.github.cursodsousa.iocompras.pedidos.model.ErroResposta;
 import io.github.cursodsousa.iocompras.pedidos.model.exception.ItemNaoEncontradoException;
 import io.github.cursodsousa.iocompras.pedidos.model.exception.ValidationException;
+import io.github.cursodsousa.iocompras.pedidos.publisher.DetalhePedidoMapper;
+import io.github.cursodsousa.iocompras.pedidos.publisher.representation.DetalhePedidoRepresentation;
 import io.github.cursodsousa.iocompras.pedidos.service.PedidoService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("pedidos")
@@ -21,6 +20,7 @@ public class PedidoController {
 
     private final PedidoService service;
     private final PedidoMapper mapper;
+    private final DetalhePedidoMapper detalhePedidoMapper;
 
     @PostMapping
     public ResponseEntity<Object> criar(@RequestBody NovoPedidoDTO novoPedidoDTO) {
@@ -44,5 +44,15 @@ public class PedidoController {
                     "Item não encontrado", "codidoPedido", e.getMessage());
             return ResponseEntity.badRequest().body(erro);
         }
+    }
+
+    @GetMapping("{codigo}")
+    public ResponseEntity<DetalhePedidoRepresentation> obterDetalhesPedido(
+            @PathVariable("codigo") Long codigo) {
+        return service
+                .carregarDadosCompletosPedido(codigo)
+                .map(detalhePedidoMapper::map)
+                .map(ResponseEntity::ok)
+                .orElseGet(() -> ResponseEntity.notFound().build());
     }
 }
