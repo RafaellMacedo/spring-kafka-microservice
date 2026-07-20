@@ -1,7 +1,14 @@
 io/github/cursodsousa/icompras/faturamento/subscriber/representation/DetalhePedidoRepresentation.class
 io/github/cursodsousa/icompras/faturamento/model/Cliente.class
+io/github/cursodsousa/icompras/faturamento/bucket/BucketService.class
+io/github/cursodsousa/icompras/faturamento/model/Pedido.class
+io/github/cursodsousa/icompras/faturamento/api/BucketController.class
+io/github/cursodsousa/icompras/faturamento/FaturamentoApplication.class
+io/github/cursodsousa/icompras/faturamento/model/ItemPedido.class
+io/github/cursodsousa/icompras/faturamento/config/BucketConfig.class
 io/github/cursodsousa/icompras/faturamento/config/KafkaConfig.class
 io/github/cursodsousa/icompras/faturamento/subscriber/representation/DetalheItemPedidoRepresentation.class
-io/github/cursodsousa/icompras/faturamento/model/Pedido.class
-io/github/cursodsousa/icompras/faturamento/model/ItemPedido.class
+io/github/cursodsousa/icompras/faturamento/bucket/BucketFile.class
+io/github/cursodsousa/icompras/faturamento/config/props/MinioProps.class
+io/github/cursodsousa/icompras/faturamento/subscriber/PedidoPagoSubscriber.class
 io/github/cursodsousa/icompras/faturamento/mapper/PedidoMapper.class
