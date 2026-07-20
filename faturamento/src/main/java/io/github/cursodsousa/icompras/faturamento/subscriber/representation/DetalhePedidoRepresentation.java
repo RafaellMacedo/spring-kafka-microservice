@@ -1,6 +1,4 @@
-package io.github.cursodsousa.iocompras.pedidos.publisher.representation;
-
-import io.github.cursodsousa.iocompras.pedidos.model.enums.StatusPedido;
+package io.github.cursodsousa.icompras.faturamento.subscriber.representation;
 
 import java.math.BigDecimal;
 import java.util.List;
@@ -17,7 +15,6 @@ public record DetalhePedidoRepresentation(
         String telefone,
         String dataPedido,
         BigDecimal total,
-        StatusPedido  status,
         List<DetalheItemPedidoRepresentation> itens
 ) {
 }

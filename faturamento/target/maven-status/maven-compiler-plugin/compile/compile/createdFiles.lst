@@ -1,0 +1,7 @@
+io/github/cursodsousa/icompras/faturamento/subscriber/representation/DetalhePedidoRepresentation.class
+io/github/cursodsousa/icompras/faturamento/model/Cliente.class
+io/github/cursodsousa/icompras/faturamento/config/KafkaConfig.class
+io/github/cursodsousa/icompras/faturamento/subscriber/representation/DetalheItemPedidoRepresentation.class
+io/github/cursodsousa/icompras/faturamento/model/Pedido.class
+io/github/cursodsousa/icompras/faturamento/model/ItemPedido.class
+io/github/cursodsousa/icompras/faturamento/mapper/PedidoMapper.class

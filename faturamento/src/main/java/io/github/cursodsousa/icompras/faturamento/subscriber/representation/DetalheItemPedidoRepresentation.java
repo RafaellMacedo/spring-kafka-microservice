@@ -1,4 +1,4 @@
-package io.github.cursodsousa.iocompras.pedidos.publisher.representation;
+package io.github.cursodsousa.icompras.faturamento.subscriber.representation;
 
 import java.math.BigDecimal;
 
