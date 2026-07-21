@@ -7,7 +7,7 @@ import org.springframework.context.annotation.Configuration;
 
 @Configuration
 @EnableConfigurationProperties
-@ConfigurationProperties(prefix = "spring.minio")
+@ConfigurationProperties(prefix = "minio")
 @Data
 public class MinioProps {
 

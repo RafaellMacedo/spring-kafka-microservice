@@ -12,6 +12,7 @@ icompras:
     kafka:
       topics:
         pedidos-pagos: 'icompras.pedidos-pagos'
+        pedidos-faturados: 'icompras.pedidos-faturados'
 
 minio:
   url: 'http://localhost:9000'
