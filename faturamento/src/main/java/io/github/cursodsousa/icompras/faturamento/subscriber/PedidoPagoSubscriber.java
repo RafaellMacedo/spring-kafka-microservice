@@ -28,7 +28,7 @@ public class PedidoPagoSubscriber {
             Pedido pedido = pedidoMapper.map(representation);
             service.gerar(pedido);
         } catch (Exception e) {
-            log.error("Erro na consumação do topico de pedidos pagos");
+            log.error("Erro na consumação do topico de pedidos pagos: ", e.getMessage());
         }
     }
 }
