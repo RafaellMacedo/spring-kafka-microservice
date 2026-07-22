@@ -13,10 +13,29 @@
 					"name": "produto",
 					"item": [
 						{
-							"name": "Salvar",
+							"name": "cadastrar",
 							"request": {
-								"method": "GET",
-								"header": []
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"nome\": \"fita super mario\",\n    \"valorUnitario\": 150.00\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:8081/produtos",
+									"host": [
+										"localhost"
+									],
+									"port": "8081",
+									"path": [
+										"produtos"
+									]
+								}
 							},
 							"response": []
 						},
@@ -26,14 +45,14 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "localhost:8082/produtos/1",
+									"raw": "localhost:8081/produtos/2",
 									"host": [
 										"localhost"
 									],
-									"port": "8082",
+									"port": "8081",
 									"path": [
 										"produtos",
-										"1"
+										"2"
 									]
 								}
 							},
@@ -45,13 +64,13 @@
 					"name": "cliente",
 					"item": [
 						{
-							"name": "Salvar",
+							"name": "cadastrar",
 							"request": {
 								"method": "POST",
 								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n    \"nome\": \"Zezinho da silva\",\n    \"cpf\": \"12345678910\",\n    \"logradouro\": \"Rua 1\",\n    \"numero\": \"10\",\n    \"bairro\": \"Flores Azuis\",\n    \"email\": \"zezinho@email.com\",\n    \"telefone\": \"12\"\n}",
+									"raw": "{\n    \"nome\": \"José Junior\",\n    \"cpf\": \"12345646416\",\n    \"logradouro\": \"Rua XPTO\",\n    \"numero\": \"10\",\n    \"bairro\": \"Bairro XPTO\",\n    \"email\": \"rafaelxpto@email.com\",\n    \"telefone\": \"132123123\"\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -102,7 +121,7 @@
 								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n    \"codigoCliente\": 12,\n    \"dadosPagamento\": {\n        \"tipoPagamento\": \"CREDIT\",\n        \"dados\": \"VISA\"\n    },\n    \"itens\": [\n        {\n            \"codigoProduto\": 10,\n            \"quantidade\": 2,\n            \"valorUnitario\": 50\n        },\n        {\n            \"codigoProduto\": 2,\n            \"quantidade\": 1,\n            \"valorUnitario\": 550\n        }\n    ]\n}",
+									"raw": "{\n    \"codigoCliente\": 2,\n    \"dadosPagamento\": {\n        \"tipoPagamento\": \"CREDIT\",\n        \"dados\": \"0311564646546\"\n    },\n    \"itens\": [\n        {\n            \"codigoProduto\": 1,\n            \"quantidade\": 3,\n            \"valorUnitario\": 299.90\n        }\n    ]\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -163,7 +182,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n    \"codigo\": 3,\n    \"chavePagamento\": \"f1c9cc23-48e6-4380-94b4-0f76b53f756f\",\n    \"status\": true,\n    \"observacoes\": \"\"\n}",
+									"raw": "{\n    \"codigo\": 12,\n    \"chavePagamento\": \"1e113973-5d42-4260-8e07-4295eee184f5\",\n    \"status\": true,\n    \"observacoes\": \"\"\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -186,25 +205,18 @@
 						},
 						{
 							"name": "detalhes",
-							"protocolProfileBehavior": {
-								"disableBodyPruning": true
-							},
 							"request": {
 								"method": "GET",
 								"header": [],
-								"body": {
-									"mode": "raw",
-									"raw": "{\n    \"codigoPedido\": 13,\n    \"tipoPagamento\": \"DEBIT\",\n    \"dados\": \"156169489\"\n}"
-								},
 								"url": {
-									"raw": "localhost:8080/pedidos/3",
+									"raw": "localhost:8080/pedidos/12",
 									"host": [
 										"localhost"
 									],
 									"port": "8080",
 									"path": [
 										"pedidos",
-										"3"
+										"12"
 									]
 								}
 							},
@@ -249,7 +261,7 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "localhost:8083/bucket?fileName=20122008078.jpg",
+									"raw": "localhost:8083/bucket?fileName=notafiscal_pedido_3.pdf",
 									"host": [
 										"localhost"
 									],
@@ -260,7 +272,7 @@
 									"query": [
 										{
 											"key": "fileName",
-											"value": "20122008078.jpg"
+											"value": "notafiscal_pedido_3.pdf"
 										}
 									]
 								}
