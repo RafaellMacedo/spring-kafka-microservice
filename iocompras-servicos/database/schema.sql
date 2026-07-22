@@ -3,7 +3,8 @@ create database icomprasprodutos;
 create table produtos (
 	codigo serial not null primary key,
 	nome varchar(100) not null,
-	valor_unitario DECIMAL(16,2) not null
+	valor_unitario DECIMAL(16,2) not null,
+    ativo boolean null
 );
 
 create database icompraspedidos;
@@ -40,5 +41,6 @@ create table clientes (
 	numero varchar(10),
 	bairro varchar(100),
 	email varchar(150),
-	telefone varchar(20)
+	telefone varchar(20),
+    ativo boolean null
 );
