@@ -394,4 +394,4 @@ icompras.pedidos-enviados
 https://github.com/RafaellMacedo
 
 🔗 LinkedIn  
-https://linkedin.com/in/rafaelmacedo
+https://www.linkedin.com/in/rafaellmacedo/
