@@ -12,6 +12,7 @@ Arquitetura de microserviços desenvolvida com **Spring Boot**, utilizando **Apa
 ![MinIO](https://img.shields.io/badge/MinIO-red)
 ![Maven](https://img.shields.io/badge/Maven-C71A36)
 ![License](https://img.shields.io/badge/license-MIT-green)
+![License](https://img.shields.io/badge/license-MIT-green)
 
 </div>
 
@@ -31,6 +32,28 @@ Além disso, o projeto demonstra:
 - Armazenamento de arquivos em buckets utilizando MinIO;
 - Persistência em PostgreSQL;
 - Containerização com Docker Compose.
+
+---
+
+# ⚙️ Inicialização do Projeto
+
+A estrutura inicial dos microserviços foi gerada utilizando o **Spring Initializr**, ferramenta oficial do ecossistema Spring para criação de projetos Maven com as dependências necessárias.
+
+🔗 https://start.spring.io/
+
+A partir da estrutura gerada pelo Spring Initializr, foram implementados os microserviços, integrações com Apache Kafka, OpenFeign, PostgreSQL, MinIO e JasperReports, seguindo uma arquitetura baseada em comunicação síncrona e assíncrona. :contentReference[oaicite:0]{index=0}
+
+## 🗄️ Configuração do Banco de Dados
+
+Antes de executar a aplicação, é necessário criar os bancos de dados utilizados pelos microserviços.
+
+O projeto disponibiliza um script SQL contendo toda a estrutura necessária (criação dos bancos, tabelas e dados iniciais, quando aplicável).
+
+O script está disponível em:
+
+📄 https://github.com/RafaellMacedo/spring-kafka-microservice/blob/main/iocompras-servicos/database/schema.sql
+
+Execute esse script em sua instância do PostgreSQL depois de iniciar os serviços com o Docker Compose.
 
 ---
 
